@@ -1,0 +1,27 @@
+<h1>Appearances#new</h1>
+<p>Find me in app/views/appearances/new.html.erb</p>
+<%= form_for @appearance do |f| %>
+	
+	<label>Celebrity Guest</label>
+	<select name="guest_id">
+		<% @guests.each do |g| %>
+			<option value="<%= g.id %>"><%= g.name %></option>
+		<% end %>
+	</select><br><br>
+	
+	<label>Episode Number</label>
+	<select name="episode_id">
+		<% @episodes.each do |e| %>
+			<option value="<%= e.id %>"><%= e.number %></option>
+		<% end %>
+	</select>
+	
+	<label>Rating</label>
+	<select name="rating">
+		<% (1..5).each do |n| %>
+			<option value="<%= n %>"><%= n %></option>
+		<% end %>
+	</select><br><br>
+
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Celebrity Guest:
+<%= @guest.name %></h1>
+<p><strong><em>Episode Numbers Where <%= @guest.name %> appeared:</em></strong></p>
+<% @appearances.each do |a| %>
+	<p>Episode<%= a.episode.number %> </p>
+<% end %>
