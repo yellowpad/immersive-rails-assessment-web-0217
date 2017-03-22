@@ -1,0 +1,7 @@
+Episode #<%= @episode.number %>
+
+Guests:
+
+<% @appearances.each do |app| %>
+	<%= link_to app.guest.name, app.guest %>
+<% end %>

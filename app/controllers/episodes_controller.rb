@@ -5,8 +5,10 @@ class EpisodesController < ApplicationController
   end
 
   def show 
+  	@episode = Episode.find(params[:id])
+  	@appearances = Appearance.where(episode_id: @episode.id)
   end
 
-  
+
 
 end
